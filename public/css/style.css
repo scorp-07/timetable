@@ -8,13 +8,20 @@
     box-sizing: border-box;
     user-select: none;
 }
+body {
+    padding-top: 40px;
+}
+
 .container {
     max-width: 1200px;
     margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .filter {
     padding: 5px 10px;
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
@@ -36,63 +43,66 @@
 }
 
 
-.form-title {
-    padding: 10px 20px;
-    margin-left: 40px;
-}
-.form{
+
+.table{
     display: flex;
     flex-direction: column;
-    margin-top: 40px;
+    max-width: 1050px;
 }
-.save-btn {
-    align-self: flex-end;
-    margin-bottom: 20px;
-}
-.form-group{
-    margin: 25px 0;
-    display: none;
-}
-.form-body{
+.week-days{
     display: flex;
-    justify-content: center;
-    padding-bottom: 15px;
+    border: 1px solid #495057;
 }
-.lesson-input{
-    padding: 8px 20px;
-    color: #495057;
-    border: 1px solid #ced4da;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    border-radius: .25rem;
-    margin-right: 5px;
+.week-day{
+    flex-basis: 20%;
+    border-right: 1px solid #495057;
+}
+.week-day__title{
+    font-size: 35px;
+}
+.week-inputs{
+    display: flex;
+    flex-basis: 80%;
+    flex-wrap: wrap;
+    padding: 4px 0;
+}
+.inputs {
+    flex-basis: 100%;
+    display: flex;
+    flex-wrap: nowrap;
 }
 
-.day {
-    padding: 10px 20px;
-    margin-right: 5px;
-    border: 1px solid #ced4da;
+.lesson-input{
+    padding: 2px 5px;
     color: #495057;
+    border: 1px solid #ced4da;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.5;
+    border-radius: .25rem;
+    margin-left: 4px;
 }
-.days {
-    /* padding: 5px 20px; */
-    border: 1px solid red;
+.lesson-select {
+    min-width: 201px;
 }
+
 .btn {
-    display: inline-block;
-    padding: 5px 10px;
+    padding: 4px 15px;
+    margin: 8px 0px;
     font-size: 1rem;
     background-color: var(--clr1);
     border-color: var(--clr1);
     font-weight: 400;
     color: #fff;
-    text-align: center;
-    vertical-align: middle;
     border-radius: .25rem;
+
+}
+.add-btn {
+    position: relative;
+    left: 90%;
+    /* transform: translateX(-100%); */
 }
 .lessons-out {
     display: flex;
     justify-content: center;
-    margin-bottom: 20px;
 }

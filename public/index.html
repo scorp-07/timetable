@@ -17,70 +17,99 @@
     </div>
 
     <div class="container">
-        <div class="form-group" id="form-group">
-            <h2 class="form-title">Ҷадвали дарсӣ</h2>
-            <div class="out" id="out">
-                <!-- <div class="lessons-out">
-                        <select name="day" id="day" class="day">
-                            <option class="days" value="Monday">Душанбе</option>
-                            <option class="days" value="Monday">Сешанбе</option>
-                            <option class="days" value="Monday">Чоршанбе</option>
-                            <option class="days" value="Monday">Панҷшанбе</option>
-                            <option class="days" value="Monday">Ҷума</option>
-                            <option class="days" value="Monday">Шанбе</option>
-                            <option class="days" value="Monday">Якшанбе</option>
-                        </select>
-                        <input type="time" value="08:00" name="lesson-start" id="lesson-start" class="lesson-input">
-                        <input type="time" value="08:00" name="lesson-end" id="lesson-end" class="lesson-input">
-                        <input type="text" name="lesson" id="lesson" placeholder="Фан" class="lesson-input">
-                        <input type="number" name="classroom" id="classroom" placeholder="Аудитория" class="lesson-input"
-                            min="0">
-                        <input type="text" name="teacher" id="teacher" class="lesson-input" placeholder="Омӯзгор">
-                        <button type="submit" class="btn add-btn" id="add-btn">Edit</button>
-                    </div> -->
-            </div>
-            <div class="form">
-                <div class="form-body">
-                    <select name="day" id="day" class="day lesson-input">
-                        <option class="days" value="Monday">Душанбе</option>
-                        <option class="days" value="Tuesday">Сешанбе</option>
-                        <option class="days" value="Wednesday">Чоршанбе</option>
-                        <option class="days" value="Thursday">Панҷшанбе</option>
-                        <option class="days" value="Friday">Ҷума</option>
-                        <option class="days" value="Saturday">Шанбе</option>
-                        <option class="days" value="Sunday">Якшанбе</option>
-                    </select>
-                    <input type="time" value="08:00" name="lesson-start" id="lesson-start" class="lesson-input">
-                    <input type="time" value="08:00" name="lesson-end" id="lesson-end" class="lesson-input">
-                    <input type="text" name="lesson" id="lesson" placeholder="Фан" class="lesson-input">
-                    <input type="number" name="classroom" id="classroom" placeholder="Аудитория" class="lesson-input"
-                        min="0">
-                    <input type="text" name="teacher" id="teacher" class="lesson-input" placeholder="Омӯзгор">
+        <div class="table">
+            <div class="week-days">
+                <div class="week-day">
+                    <h1 class="week-day__title">Душанбе</h1>
+                </div>
+                <div class="week-inputs Monday" data-day="Monday">
+                    <div class="inputs"><input type="time" value="08:00" class="lesson-input" id="lesson-start"><input
+                            type="time" value="08:00" class="lesson-input" id="lesson-end"><select
+                            class="lesson-input lesson-select" id="lesson"></select><select
+                            class="lesson-input lesson-select" id="classroom"></select><select
+                            class="lesson-input lesson-select" id="teacher"></select></div>
                     <button type="submit" class="btn add-btn" id="add-btn">Add</button>
                 </div>
-                <button type="submit" class="btn save-btn" id="save-btn">Save</button>
             </div>
-            <div class="out" id="out">
-                <!-- <div class="lessons-out">
-                        <select name="day" id="day" class="day">
-                            <option class="days" value="Monday">Душанбе</option>
-                            <option class="days" value="Monday">Сешанбе</option>
-                            <option class="days" value="Monday">Чоршанбе</option>
-                            <option class="days" value="Monday">Панҷшанбе</option>
-                            <option class="days" value="Monday">Ҷума</option>
-                            <option class="days" value="Monday">Шанбе</option>
-                            <option class="days" value="Monday">Якшанбе</option>
-                        </select>
-                        <input type="time" value="08:00" name="lesson-start" id="lesson-start" class="lesson-input">
-                        <input type="time" value="08:00" name="lesson-end" id="lesson-end" class="lesson-input">
-                        <input type="text" name="lesson" id="lesson" placeholder="Фан" class="lesson-input">
-                        <input type="number" name="classroom" id="classroom" placeholder="Аудитория" class="lesson-input"
-                            min="0">
-                        <input type="text" name="teacher" id="teacher" class="lesson-input" placeholder="Омӯзгор">
-                        <button type="submit" class="btn add-btn" id="add-btn">Edit</button>
-                    </div> -->
+            <div class="week-days">
+                <div class="week-day">
+                    <h1 class="week-day__title">Сешанбе</h1>
+                </div>
+                <div class="week-inputs Tuesday" data-day="Tuesday">
+                    <div class="inputs"><input type="time" value="08:00" class="lesson-input" id="lesson-start"><input
+                            type="time" value="08:00" class="lesson-input" id="lesson-end"><select
+                            class="lesson-input lesson-select" id="lesson"></select><select
+                            class="lesson-input lesson-select" id="classroom"></select><select
+                            class="lesson-input lesson-select" id="teacher"></select></div>
+                    <button type="submit" class="btn add-btn" id="add-btn">Add</button>
+                </div>
             </div>
-            <!-- </div> -->
+            <div class="week-days">
+                <div class="week-day">
+                    <h1 class="week-day__title">Чоршанбе</h1>
+                </div>
+                <div class="week-inputs Tuesday" data-day="Wednesday">
+                    <div class="inputs"><input type="time" value="08:00" class="lesson-input" id="lesson-start"><input
+                            type="time" value="08:00" class="lesson-input" id="lesson-end"><select
+                            class="lesson-input lesson-select" id="lesson"></select><select
+                            class="lesson-input lesson-select" id="classroom"></select><select
+                            class="lesson-input lesson-select" id="teacher"></select></div>
+                    <button type="submit" class="btn add-btn" id="add-btn">Add</button>
+                </div>
+            </div>
+            <div class="week-days">
+                <div class="week-day">
+                    <h1 class="week-day__title">Панҷшанбе</h1>
+                </div>
+                <div class="week-inputs Tuesday" data-day="Thursday">
+                    <div class="inputs"><input type="time" value="08:00" class="lesson-input" id="lesson-start"><input
+                            type="time" value="08:00" class="lesson-input" id="lesson-end"><select
+                            class="lesson-input lesson-select" id="lesson"></select><select
+                            class="lesson-input lesson-select" id="classroom"></select><select
+                            class="lesson-input lesson-select" id="teacher"></select></div>
+                    <button type="submit" class="btn add-btn" id="add-btn">Add</button>
+                </div>
+            </div>
+            <div class="week-days">
+                <div class="week-day">
+                    <h1 class="week-day__title">Ҷумъа</h1>
+                </div>
+                <div class="week-inputs Tuesday" data-day="Friday">
+                    <div class="inputs"><input type="time" value="08:00" class="lesson-input" id="lesson-start"><input
+                            type="time" value="08:00" class="lesson-input" id="lesson-end"><select
+                            class="lesson-input lesson-select" id="lesson"></select><select
+                            class="lesson-input lesson-select" id="classroom"></select><select
+                            class="lesson-input lesson-select" id="teacher"></select></div>
+                    <button type="submit" class="btn add-btn" id="add-btn">Add</button>
+                </div>
+            </div>
+            <div class="week-days">
+                <div class="week-day">
+                    <h1 class="week-day__title">Шанбе</h1>
+                </div>
+                <div class="week-inputs Tuesday" data-day="Saturday">
+                    <div class="inputs"><input type="time" value="08:00" class="lesson-input" id="lesson-start"><input
+                            type="time" value="08:00" class="lesson-input" id="lesson-end"><select
+                            class="lesson-input lesson-select" id="lesson"></select><select
+                            class="lesson-input lesson-select" id="classroom"></select><select
+                            class="lesson-input lesson-select" id="teacher"></select></div>
+                    <button type="submit" class="btn add-btn" id="add-btn">Add</button>
+                </div>
+            </div>
+            <div class="week-days">
+                <div class="week-day">
+                    <h1 class="week-day__title">Якшанбе</h1>
+                </div>
+                <div class="week-inputs Tuesday" data-day="Sunday">
+                    <div class="inputs"><input type="time" value="08:00" class="lesson-input" id="lesson-start"><input
+                            type="time" value="08:00" class="lesson-input" id="lesson-end"><select
+                            class="lesson-input lesson-select" id="lesson"></select><select
+                            class="lesson-input lesson-select" id="classroom"></select><select
+                            class="lesson-input lesson-select" id="teacher"></select></div>
+                    <button type="submit" class="btn add-btn" id="add-btn">Add</button>
+                </div>
+            </div>
+            <button type="submit" class="btn add-btn" id="save-btn">Add</button>
         </div>
     </div>
 </body>
