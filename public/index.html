@@ -1,104 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
-    <title>Document</title>
+    <title>Ҷадвли дарсӣ</title>
 </head>
+
 <body>
-    <div class="coursess">
-        <div class="coursess_item" data-course="1">Курси 1
-            <ul class="sub-items">
-                <li class="sub-item speciality" data-specialty="Web">Веб-дизайн</li>
-                <li class="sub-item speciality" data-specialty="Graphic">Дизайни графики</li>
-                <li class="sub-item speciality" data-specialty="SP1">Дизайни робитави</li>
-                <li class="sub-item speciality" data-specialty="SP2">Дизайни кастюм ва газвор</li>
-                <li class="sub-item speciality" data-specialty="SP3">Дизайни дохили бино</li>
-            </ul>
-        </div>
-        <div class="coursess_item" data-course="2">Курси 2
-            <ul class="sub-items">
-                <li class="sub-item speciality">Веб-дизайн</li>
-                <li class="sub-item speciality">Дизайни графики</li>
-                <li class="sub-item speciality">Дизайни робитави</li>
-                <li class="sub-item speciality">Дизайни кастюм ва газвор</li>
-                <li class="sub-item speciality">Дизайни дохили бино</li>
-            </ul>
-        </div>
-        <div class="coursess_item" data-course="3">Курси 3
-            <ul class="sub-items">
-                <li class="sub-item speciality">Веб-дизайн</li>
-                <li class="sub-item speciality">Дизайни графики</li>
-                <li class="sub-item speciality">Дизайни робитави</li>
-                <li class="sub-item speciality">Дизайни кастюм ва газвор</li>
-                <li class="sub-item speciality">Дизайни дохили бино</li>
-            </ul>
-        </div>
-        <div class="coursess_item" data-course="4">Курси 4
-            <ul class="sub-items">
-                <li class="sub-item speciality">Веб-дизайн</li>
-                <li class="sub-item speciality">Дизайни графики</li>
-                <li class="sub-item speciality">Дизайни робитави</li>
-                <li class="sub-item speciality">Дизайни кастюм ва газвор</li>
-                <li class="sub-item speciality">Дизайни дохили бино</li>
-            </ul>
-        </div>
+    <div class="filter" id="filter">
+        <div class="filter__item course__btn" data-course="1">Курси 1</div>
+        <div class="filter__item course__btn" data-course="2">Курси 2</div>
+        <div class="filter__item course__btn" data-course="3">Курси 3</div>
+        <div class="filter__item course__btn" data-course="4">Курси 4</div>
     </div>
-    <div class="out" id="out">
-        <table class="table">
-            <tr data-day="Monday">
-                <td class="day" id="Monday">Mondey</td>
-                <td class="inputs">
-                    <input type="text" id="1">
-                    <button class="add-btn" id="add-btn" data-inputId = '1'>Add</button>
-                </td>
-            </tr>
-            <tr data-day="Tuesday">
-                <td class="day" id="Tuesday">Mondey</td>
-                <td class="inputs">
-                    <input type="text" id="2">
-                    <button class="add-btn" id="add-btn" data-inputId = '2'>Add</button>
-                </td>
-            </tr>
-            <tr data-day="Wednesday">
-                <td class="day" id="Wednesday">Mondey</td>
-                <td class="inputs">
-                    <input type="text" id="3">
-                    <button class="add-btn" data-inputId = '3'>Add</button>
-                </td>
-            </tr>
-            <tr data-day="Thuesday">
-                <td class="day" id="Thuesday">Mondey</td>
-                <td class="inputs">
-                    <input type="text" id="4">
-                    <button class="add-btn" data-inputId = '4'>Add</button>
-                </td>
-            </tr>
-            <tr data-day="Friday">
-                <td class="day" id="Friday">Mondey</td>
-                <td class="inputs">
-                    <input type="text" id="5">
-                    <button class="add-btn" data-inputId = '5'>Add</button>
-                </td>
-            </tr>
-            <tr data-day="Sunday">
-                <td class="day" id="Sunday">Mondey</td>
-                <td class="inputs">
-                    <input type="text" id="6">
-                    <button class="add-btn" data-inputId = '6'>Add</button>
-                </td>
-            </tr>
-            <tr data-day="Saturday">
-                <td class="day" id="Saturday">Mondey</td>
-                <td class="inputs">
-                    <input type="text" id="7">
-                    <button class="add-btn" data-inputId = '7'>Add</button>
-                </td>
-            </tr>
-            
-        </table>
+
+    <div class="container">
+        <div class="form-group" id="form-group">
+            <h2 class="form-title">Ҷадвали дарсӣ</h2>
+            <div class="out" id="out">
+                <!-- <div class="lessons-out">
+                        <select name="day" id="day" class="day">
+                            <option class="days" value="Monday">Душанбе</option>
+                            <option class="days" value="Monday">Сешанбе</option>
+                            <option class="days" value="Monday">Чоршанбе</option>
+                            <option class="days" value="Monday">Панҷшанбе</option>
+                            <option class="days" value="Monday">Ҷума</option>
+                            <option class="days" value="Monday">Шанбе</option>
+                            <option class="days" value="Monday">Якшанбе</option>
+                        </select>
+                        <input type="time" value="08:00" name="lesson-start" id="lesson-start" class="lesson-input">
+                        <input type="time" value="08:00" name="lesson-end" id="lesson-end" class="lesson-input">
+                        <input type="text" name="lesson" id="lesson" placeholder="Фан" class="lesson-input">
+                        <input type="number" name="classroom" id="classroom" placeholder="Аудитория" class="lesson-input"
+                            min="0">
+                        <input type="text" name="teacher" id="teacher" class="lesson-input" placeholder="Омӯзгор">
+                        <button type="submit" class="btn add-btn" id="add-btn">Edit</button>
+                    </div> -->
+            </div>
+            <div class="form">
+                <div class="form-body">
+                    <select name="day" id="day" class="day lesson-input">
+                        <option class="days" value="Monday">Душанбе</option>
+                        <option class="days" value="Tuesday">Сешанбе</option>
+                        <option class="days" value="Wednesday">Чоршанбе</option>
+                        <option class="days" value="Thursday">Панҷшанбе</option>
+                        <option class="days" value="Friday">Ҷума</option>
+                        <option class="days" value="Saturday">Шанбе</option>
+                        <option class="days" value="Sunday">Якшанбе</option>
+                    </select>
+                    <input type="time" value="08:00" name="lesson-start" id="lesson-start" class="lesson-input">
+                    <input type="time" value="08:00" name="lesson-end" id="lesson-end" class="lesson-input">
+                    <input type="text" name="lesson" id="lesson" placeholder="Фан" class="lesson-input">
+                    <input type="number" name="classroom" id="classroom" placeholder="Аудитория" class="lesson-input"
+                        min="0">
+                    <input type="text" name="teacher" id="teacher" class="lesson-input" placeholder="Омӯзгор">
+                    <button type="submit" class="btn add-btn" id="add-btn">Add</button>
+                </div>
+                <button type="submit" class="btn save-btn" id="save-btn">Save</button>
+            </div>
+            <div class="out" id="out">
+                <!-- <div class="lessons-out">
+                        <select name="day" id="day" class="day">
+                            <option class="days" value="Monday">Душанбе</option>
+                            <option class="days" value="Monday">Сешанбе</option>
+                            <option class="days" value="Monday">Чоршанбе</option>
+                            <option class="days" value="Monday">Панҷшанбе</option>
+                            <option class="days" value="Monday">Ҷума</option>
+                            <option class="days" value="Monday">Шанбе</option>
+                            <option class="days" value="Monday">Якшанбе</option>
+                        </select>
+                        <input type="time" value="08:00" name="lesson-start" id="lesson-start" class="lesson-input">
+                        <input type="time" value="08:00" name="lesson-end" id="lesson-end" class="lesson-input">
+                        <input type="text" name="lesson" id="lesson" placeholder="Фан" class="lesson-input">
+                        <input type="number" name="classroom" id="classroom" placeholder="Аудитория" class="lesson-input"
+                            min="0">
+                        <input type="text" name="teacher" id="teacher" class="lesson-input" placeholder="Омӯзгор">
+                        <button type="submit" class="btn add-btn" id="add-btn">Edit</button>
+                    </div> -->
+            </div>
+            <!-- </div> -->
+        </div>
     </div>
 </body>
 <script src="./js/main.js"></script>
+
 </html>
