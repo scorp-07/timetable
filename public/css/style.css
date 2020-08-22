@@ -9,7 +9,7 @@
     user-select: none;
 }
 body {
-    padding-top: 40px;
+    padding-top: 20px 0;
 }
 
 .container {
@@ -97,12 +97,17 @@ body {
     border-radius: .25rem;
 
 }
+.btn1 {
+    /* display: block; */
+    /* max-width: 150px; */
+    width: 10%;
+    max-width: 150px;
+    height: 25px;
+    align-self: flex-end;
+
+}
 .add-btn {
     position: relative;
     left: 90%;
     /* transform: translateX(-100%); */
-}
-.lessons-out {
-    display: flex;
-    justify-content: center;
 }
