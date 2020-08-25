@@ -9,7 +9,7 @@
     user-select: none;
 }
 body {
-    padding-top: 20px 0;
+    padding: 20px 0;
 }
 
 .container {
@@ -21,7 +21,7 @@ body {
 }
 .filter {
     padding: 5px 10px;
-    display: none;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
@@ -42,10 +42,8 @@ body {
     transition: all 1s ease;
 }
 
-
-
 .table{
-    display: flex;
+    display: none;
     flex-direction: column;
     max-width: 1050px;
 }
@@ -55,24 +53,35 @@ body {
 }
 .week-day{
     flex-basis: 20%;
-    border-right: 1px solid #495057;
+    /* border-right: 1px solid #495057; */
+    writing-mode: vertical-rl;
+    text-align: center;
+    vertical-align: middle;
 }
 .week-day__title{
     font-size: 35px;
+    color: #0006;
+    text-align: center;
 }
 .week-inputs{
     display: flex;
     flex-basis: 80%;
     flex-wrap: wrap;
+    max-width: 833px;
+    flex-grow: 0;
     padding: 4px 0;
+    border-left: 1px solid #495057;
 }
 .inputs {
     flex-basis: 100%;
+    flex-grow: 0;
     display: flex;
     flex-wrap: nowrap;
+    margin-bottom: 5px;
 }
 
 .lesson-input{
+    max-height: 25px;
     padding: 2px 5px;
     color: #495057;
     border: 1px solid #ced4da;
@@ -87,6 +96,7 @@ body {
 }
 
 .btn {
+    max-height: 30px;
     padding: 4px 15px;
     margin: 8px 0px;
     font-size: 1rem;
@@ -101,9 +111,16 @@ body {
     /* display: block; */
     /* max-width: 150px; */
     width: 10%;
+    padding: 6px 15px;
+    margin: 25px 0 0 0;
     max-width: 150px;
     height: 25px;
     align-self: flex-end;
+    border: none;
+    border-color: #28a745;
+    border-radius: .25rem;
+    background-color: #28a745;
+    color: #fff;
 
 }
 .add-btn {
