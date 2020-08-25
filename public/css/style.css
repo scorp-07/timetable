@@ -20,25 +20,32 @@ body {
     align-items: center;
 }
 .filter {
-    padding: 5px 10px;
-    display: flex;
+    padding: 5px 10px 5px 10px;
+    display: inline-flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     transition: all ease;
 }
 .filter__item {
-    padding: 5px 15px;
+    min-width: 150px;
+    padding: 10px 35px 10px 10px;
+    margin-bottom: 2px;
     cursor: pointer;
     font-size: 16px;
     font-weight: 400;
     line-height: 25px;
+    color: #fff;
     transition: all 0.5s ease;
     overflow: hidden;
+    background-color: var(--clr1);
 }
+.filter__item:first-child {
+    border-top-right-radius: 5px;
+}
+
 .filter__item:hover {
     background-color: var(--clr1);
-    color: #fff;
     transition: all 1s ease;
 }
 
@@ -49,14 +56,15 @@ body {
 }
 .week-days{
     display: flex;
-    border: 1px solid #495057;
+    border: 1px solid #333;
 }
 .week-day{
     flex-basis: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     /* border-right: 1px solid #495057; */
     writing-mode: vertical-rl;
-    text-align: center;
-    vertical-align: middle;
 }
 .week-day__title{
     font-size: 35px;
@@ -70,7 +78,7 @@ body {
     max-width: 833px;
     flex-grow: 0;
     padding: 4px 0;
-    border-left: 1px solid #495057;
+    border-left: 1px solid #333;
 }
 .inputs {
     flex-basis: 100%;
