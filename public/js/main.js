@@ -1,88 +1,96 @@
-const addBtn = document.getElementById('add-btn');
+const addBtn = document.getElementsByClassName('add-btn');
 const outBlock = document.getElementById('out');
 const courseEl = document.getElementsByClassName('course__btn');
 const filterEl = document.getElementById('filter');
-const specEl = document.getElementsByClassName('speciality__btn');
+const editDate = [];
 
 const specialities = ['Web-design', 'Дизайни робитавӣ', 'Дизайни кастюм', 'Дизайни графикӣ'];
+const coursess = ['Курси 1'];
 const editGroup = {};
-let idCount = 0;
+let idCount = 4;
 
 for (const item of courseEl) {
     item.addEventListener('click', () => {
         const course = item.dataset.course;
-        editGroup.course = course;
-        item.parentElement.innerHTML = '';
+        editDate[0] = course;
+        filterEl.innerHTML = '';
         for (const el of specialities) {
-            console.log(el);
-            filter.innerHTML += `<div class="filter__item speciality__btn" data-speciality="1">${el}</div>`;
+            filterEl.innerHTML += `<div class="filter__item speciality__btn" data-speciality="2">${el}</div>`;
         }
+        const specEl = document.getElementsByClassName('speciality__btn');
         for (const item of specEl) {
             item.addEventListener('click', () => {
-                const spec = item.dataset.speciality;
-                editGroup.speciality = spec;
-                document.getElementById('form-group').style.display = 'block';
-                filter.style.display = 'none';
+                filterEl.style.display = 'none';
+                document.getElementById('table').style.display = 'flex';
             });
         }
-
     });
 }
 
-addBtn.addEventListener('click', () => {
-    
-    idCount++;
-    const inputs = document.getElementsByClassName('lesson-input');
-    const day = document.getElementById('day').value
-    lessonS = document.getElementById('lesson-start').value
-    lessonE = document.getElementById('lesson-end').value
-    lessonName = document.getElementById('lesson').value
-    classRoom = document.getElementById('classroom').value
-    teacher = document.getElementById('teacher').value;
-
-    document.getElementById('lesson-start').value = '08:00';
-    document.getElementById('lesson-end').value = '08:00';
-    document.getElementById('lesson').value = '';
-    document.getElementById('classroom').value = '';
-    document.getElementById('teacher').value = '';
-
-    if (lessonS == '' || lessonE == '' || lesson == '' || classRoom == '' || classRoom < 0 || teacher == '') {
-
-    } else {
-        tableOut(day, lessonS, lessonE, lessonName, classRoom, teacher, outBlock);
-
-    }
 
 
-});
+for (const item of addBtn) {
+    item.addEventListener('click', () => {
+        const pBlock = item.parentElement;
+        idCount++;
+        item.before(createInputs());
+    });
+}
 
-function tableOut(day, lessonStart, lessonEnd, lessonName, audithorium, teacherName, outEl) {
-    outEl.innerHTML += `
-            <div class="lessons-out">
-                <select name="day" id="day" class="day" value="${day}" disabled>
-                    <option class="days" value="Monday">Душанбе</option>
-                    <option class="days" value="Monday">Сешанбе</option>
-                    <option class="days" value="Monday">Чоршанбе</option>
-                    <option class="days" value="Monday">Панҷшанбе</option>
-                    <option class="days" value="Monday">Ҷума</option>
-                    <option class="days" value="Monday">Шанбе</option>
-                    <option class="days" value="Monday">Якшанбе</option>
-                </select>
-                <input type="time" value="${lessonStart}" disabled name="lesson-start" id="lesson-start${idCount}" class="lesson-input">
-                <input type="time" value="${lessonEnd}" disabled name="lesson-end" id="lesson-end${idCount}" class="lesson-input" >
-                <input type="text" name="lesson" value="${lessonName}" disabled placeholder="Фан" id="lesson-name${idCount}" class="lesson-input">
-                <input type="number" name="classroom" value="${audithorium}" disabled placeholder="Аудитория" id="classroom${idCount}" class="lesson-input" min="0">
-                <input type="text" name="teacher" value="${teacherName}" disabled class="lesson-input" id="teacher${idCount}" placeholder="Омӯзгор">
-                <button type="submit" class="btn edit-btn" id="edit-btn">Edit</button>
-            </div>
-        `
+function createInputs() {
+    const inputs = createEl('div', { 'class': 'inputs' });
+    const timeStartInput = createEl('input', { 'type': 'time', 'class': 'lesson-input', 'id': 'leson-start', 'value': '08:00' });
+    const timeEndInput = createEl('input', { 'type': 'time', 'class': 'lesson-input', 'id': 'lesson-end', 'value': '08:00' });
+    const lessonName = createEl('select', { 'class': 'lesson-input lesson-select', 'id': 'lesson' });
+    const classRoom = createEl('select', { 'class': 'lesson-input lesson-select', 'id': 'classroom' });
+    const teacherName = createEl('select', { 'class': 'lesson-input lesson-select', 'id': 'teacher' });
+
+    inputs.appendChild(timeStartInput);
+    inputs.appendChild(timeEndInput);
+    inputs.appendChild(lessonName);
+    inputs.appendChild(classRoom);
+    inputs.appendChild(teacherName);
+    return inputs;
 }
 
 
+/*
+function _ajax(url, method, obj)
+{
+
+function sUrl(obj)
+{
+return Object
+.keys(obj)
+.map(k => `${encodeURIComponent(k)}=${encodeURIComponent(obj[k])}`)
+.join('&');
+}
+
+const request = new XMLHttpRequest();
+request.open(method, url, true);
+request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+request.addEventListener("readystatechange", () => {
+if(request.readyState === 4 && request.status === 200) {
+request.responseText;
+}
+});
+
+request.send(sUrl(obj));
+}
+*/
 
 
+function addEvent(elements, e, callback) {
+    for (const item of elements) {
+        item.addEventListener(e, callback);
+    }
+}
 
-
-
-
+function createEl(name, options) {
+    const elem = document.createElement(name);
+    for (const key in options) {
+        elem.setAttribute(key, options[key]);
+    }
+    return elem;
+}
 
