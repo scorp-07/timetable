@@ -1,13 +1,19 @@
 :root {
-    --clr1: #007bff;
-
+    --clr1: #3d3d3d;
 }
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     user-select: none;
 }
+
+a, ul, li, div {
+    list-style: none;
+    text-decoration: none;
+}
+
 body {
     padding: 20px 0;
 }
@@ -19,46 +25,107 @@ body {
     flex-direction: column;
     align-items: center;
 }
-.filter {
-    padding: 5px 10px 5px 10px;
-    display: inline-flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    transition: all ease;
+
+/******************************** Menu *************************************/
+
+.side {
+    width: 200px;
+    margin: 20px;
 }
-.filter__item {
-    min-width: 150px;
-    padding: 10px 35px 10px 10px;
-    margin-bottom: 2px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 25px;
+
+.side.non-active {
+    display: none;
+}
+
+.menu a {
+    background-color: #3d3d3d;
     color: #fff;
-    transition: all 0.5s ease;
-    overflow: hidden;
-    background-color: var(--clr1);
-}
-.filter__item:first-child {
-    border-top-right-radius: 5px;
+    padding: 10px;
+    display: block;
+    border-bottom: 1px solid #666;
+    transition: 0.5s all;
 }
 
-.filter__item:hover {
-    background-color: var(--clr1);
-    transition: all 1s ease;
+.menu li:first-child a, .menu li .menu__drop li:first-child a {
+    border-radius: 3px 3px 0 0;
 }
 
-.table{
+.menu li:last-child a, .menu li .menu__drop li:last-child a {
+    border-radius: 0 0 3px 3px;
+    border-bottom: 0;
+}
+
+.menu li .menu__drop li a {
+    border-radius: 0;
+    border-bottom: 1px solid #666;
+}
+
+.menu a:hover {
+    background-color: #666;
+    padding: 10px 0 10px 20px;
+}
+
+.menu__list {
+    position: relative;
+}
+
+.menu__drop {
+    position: absolute;
+    width: 100%;
+    left: 100%;
+    top: -9999em;
+    opacity: 0;
+    border-left: 10px solid transparent;
+    transition: 0.5s opacity;
+}
+
+.menu__list:hover .menu__drop {
+    opacity: 1;
+    top: 0;
+}
+
+.menu__list::after {
+    content: " ";
+    position: absolute;
+    border: 5px solid;
+    border-color: transparent transparent transparent #eee;
+    top: 1em;
+    right: 0.7em;
+    transition: 0.5s;
+}
+
+.menu__list:hover::after {
+    transform: scaleX(-1);
+}
+
+/**************************************** Menu ******************************************/
+/* ************************************** Table *****************************************/
+
+.table-title {
+    text-align: center;
+    font-size: 24px;
+    text-transform: uppercase;
+    padding: 15px 0;
+}
+
+.table-title__item {}
+
+.table {
     display: none;
     flex-direction: column;
     max-width: 1050px;
 }
-.week-days{
+
+.table.active {
+    display: flex;
+}
+
+.week-days {
     display: flex;
     border: 1px solid #333;
 }
-.week-day{
+
+.week-day {
     flex-basis: 20%;
     display: flex;
     justify-content: center;
@@ -66,12 +133,14 @@ body {
     /* border-right: 1px solid #495057; */
     writing-mode: vertical-rl;
 }
-.week-day__title{
+
+.week-day__title {
     font-size: 35px;
     color: #0006;
     text-align: center;
 }
-.week-inputs{
+
+.week-inputs {
     display: flex;
     flex-basis: 80%;
     flex-wrap: wrap;
@@ -80,6 +149,7 @@ body {
     padding: 4px 0;
     border-left: 1px solid #333;
 }
+
 .inputs {
     flex-basis: 100%;
     flex-grow: 0;
@@ -88,7 +158,7 @@ body {
     margin-bottom: 5px;
 }
 
-.lesson-input{
+.lesson-input {
     max-height: 25px;
     padding: 2px 5px;
     color: #495057;
@@ -99,6 +169,7 @@ body {
     border-radius: .25rem;
     margin-left: 4px;
 }
+
 .lesson-select {
     min-width: 201px;
 }
@@ -113,8 +184,8 @@ body {
     font-weight: 400;
     color: #fff;
     border-radius: .25rem;
-
 }
+
 .btn1 {
     /* display: block; */
     /* max-width: 150px; */
@@ -129,10 +200,12 @@ body {
     border-radius: .25rem;
     background-color: #28a745;
     color: #fff;
-
 }
+
 .add-btn {
     position: relative;
     left: 90%;
     /* transform: translateX(-100%); */
 }
+
+/* ************************************* Table ***************************************** */

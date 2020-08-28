@@ -1,34 +1,25 @@
-const addBtn = document.getElementsByClassName('add-btn');
-const outBlock = document.getElementById('out');
-const courseEl = document.getElementsByClassName('course__btn');
-const filterEl = document.getElementById('filter');
-const editDate = [];
+const addBtn = document.getElementsByClassName('add-btn'); //кнопки добавить
+const sideEl = document.getElementById('side'); // Меню 
+const specEl = document.getElementsByClassName('spec'); // все пункты меню со специальностями
+const table = document.getElementById('table'); // таблица
+const editSpec = {}; // Объект для временного хранения данных редактируемого группы
 
-const specialities = ['Web-design', 'Дизайни робитавӣ', 'Дизайни кастюм', 'Дизайни графикӣ'];
-const coursess = ['Курси 1'];
-const editGroup = {};
-let idCount = 4;
+let idCount = 2; // счетчик id 
 
-for (const item of courseEl) {
+// Обработка нажатия списка специальностей 
+for (const item of specEl) {
     item.addEventListener('click', () => {
-        const course = item.dataset.course;
-        editDate[0] = course;
-        filterEl.innerHTML = '';
-        for (const el of specialities) {
-            filterEl.innerHTML += `<div class="filter__item speciality__btn" data-speciality="2">${el}</div>`;
-        }
-        const specEl = document.getElementsByClassName('speciality__btn');
-        for (const item of specEl) {
-            item.addEventListener('click', () => {
-                filterEl.style.display = 'none';
-                document.getElementById('table').style.display = 'flex';
-            });
-        }
+        const course = item.parentElement.parentElement;
+        table.classList.add('active');
+        sideEl.classList.add('non-active');
+        editSpec.course = course.parentElement.dataset.course;
+        editSpec.spec = item.dataset.speciality;
+
+        console.log(editSpec);
     });
 }
 
-
-
+// Обработка нажатия на кнопку добавить
 for (const item of addBtn) {
     item.addEventListener('click', () => {
         const pBlock = item.parentElement;
@@ -37,6 +28,7 @@ for (const item of addBtn) {
     });
 }
 
+// Функция для создания инпутов для таблицы
 function createInputs() {
     const inputs = createEl('div', { 'class': 'inputs' });
     const timeStartInput = createEl('input', { 'type': 'time', 'class': 'lesson-input', 'id': 'leson-start', 'value': '08:00' });
@@ -79,13 +71,7 @@ request.send(sUrl(obj));
 }
 */
 
-
-function addEvent(elements, e, callback) {
-    for (const item of elements) {
-        item.addEventListener(e, callback);
-    }
-}
-
+// Функция для создания ДОМ элемента через JS (не завершен)
 function createEl(name, options) {
     const elem = document.createElement(name);
     for (const key in options) {
