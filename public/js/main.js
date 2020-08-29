@@ -45,6 +45,15 @@ function createInputs() {
     return inputs;
 }
 
+// Функция для создания ДОМ элемента через JS (не завершен)
+function createEl(name, options) {
+    const elem = document.createElement(name);
+    for (const key in options) {
+        elem.setAttribute(key, options[key]);
+    }
+    return elem;
+}
+
 
 /*
 function _ajax(url, method, obj)
@@ -70,13 +79,3 @@ request.responseText;
 request.send(sUrl(obj));
 }
 */
-
-// Функция для создания ДОМ элемента через JS (не завершен)
-function createEl(name, options) {
-    const elem = document.createElement(name);
-    for (const key in options) {
-        elem.setAttribute(key, options[key]);
-    }
-    return elem;
-}
-

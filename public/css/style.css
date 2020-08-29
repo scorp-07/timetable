@@ -1,5 +1,6 @@
 :root {
     --clr1: #3d3d3d;
+    --clr2: #666;
 }
 
 * {
@@ -102,8 +103,8 @@ body {
 /* ************************************** Table *****************************************/
 
 .table-title {
-    text-align: center;
-    font-size: 24px;
+    text-align: center; 
+    font-size: 24px; 
     text-transform: uppercase;
     padding: 15px 0;
 }
@@ -112,26 +113,26 @@ body {
 
 .table {
     display: none;
-    flex-direction: column;
-    max-width: 1050px;
 }
 
 .table.active {
-    display: flex;
+    display: block;
 }
 
 .week-days {
     display: flex;
     border: 1px solid #333;
+    min-height: 206px;
 }
 
 .week-day {
-    flex-basis: 20%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* border-right: 1px solid #495057; */
-    writing-mode: vertical-rl;
+    position: relative;
+    writing-mode: vertical-rl; 
+    margin: auto 0;
+    padding: 10px 8px;
+}
+.week-days:last-child .week-day {
+    padding: 0;
 }
 
 .week-day__title {
@@ -141,20 +142,12 @@ body {
 }
 
 .week-inputs {
-    display: flex;
-    flex-basis: 80%;
-    flex-wrap: wrap;
-    max-width: 833px;
-    flex-grow: 0;
-    padding: 4px 0;
-    border-left: 1px solid #333;
+    padding: 4px 5px;
+    border-left: 1px solid #333; 
+    position: relative;
 }
 
 .inputs {
-    flex-basis: 100%;
-    flex-grow: 0;
-    display: flex;
-    flex-wrap: nowrap;
     margin-bottom: 5px;
 }
 
@@ -187,25 +180,23 @@ body {
 }
 
 .btn1 {
-    /* display: block; */
-    /* max-width: 150px; */
-    width: 10%;
-    padding: 6px 15px;
-    margin: 25px 0 0 0;
-    max-width: 150px;
-    height: 25px;
-    align-self: flex-end;
+    padding: 8px 35px;
+    margin: 25px 0;
+    position: relative;
+    left: 100%;
+    transform: translateX(-100%);
     border: none;
-    border-color: #28a745;
+    border-color: #3d3d3d;
     border-radius: .25rem;
-    background-color: #28a745;
+    background-color: #3d3d3d;
+    font-size: 16px;
     color: #fff;
 }
 
 .add-btn {
     position: relative;
     left: 90%;
-    /* transform: translateX(-100%); */
+    
 }
 
 /* ************************************* Table ***************************************** */
