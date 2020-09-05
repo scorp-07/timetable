@@ -2,9 +2,9 @@ const addBtn = document.getElementsByClassName('add-btn'); //кнопки доб
 const sideEl = document.getElementById('side'); // Меню 
 const specEl = document.getElementsByClassName('spec'); // все пункты меню со специальностями
 const table = document.getElementById('table'); // таблица
-const editSpec = {}; // Объект для временного хранения данных редактируемого группы
+const data = {}; // Объект для временного хранения данных редактируемого группы
 
-let idCount = 2; // счетчик id 
+let idCount = 1; // счетчик id 
 
 // Обработка нажатия списка специальностей 
 for (const item of specEl) {
@@ -12,10 +12,10 @@ for (const item of specEl) {
         const course = item.parentElement.parentElement;
         table.classList.add('active');
         sideEl.classList.add('non-active');
-        editSpec.course = course.parentElement.dataset.course;
-        editSpec.spec = item.dataset.speciality;
+        const group = `${item.dataset.speciality}-${course.parentElement.dataset.course}`;
+        data[group] = {};
 
-        console.log(editSpec);
+        console.log(data);
     });
 }
 
@@ -23,19 +23,29 @@ for (const item of specEl) {
 for (const item of addBtn) {
     item.addEventListener('click', () => {
         const pBlock = item.parentElement;
+        const lessonData = {
+            "startTime": document.getElementById(`lesson-start${idCount}`).value,
+            "endTime": document.getElementById(`lesson-end${idCount}`).value,
+            "lessonName": document.getElementById(`lesson${idCount}`).value,
+            "classRoom": document.getElementById(`classroom${idCount}`).value,
+            "teacher": document.getElementById(`teacher${idCount}`).value,
+        }
+        
+        console.log(lessonData);
+        
         idCount++;
-        item.before(createInputs());
+        item.before(createInputs(idCount));
     });
 }
 
 // Функция для создания инпутов для таблицы
-function createInputs() {
+function createInputs(id) {
     const inputs = createEl('div', { 'class': 'inputs' });
-    const timeStartInput = createEl('input', { 'type': 'time', 'class': 'lesson-input', 'id': 'leson-start', 'value': '08:00' });
-    const timeEndInput = createEl('input', { 'type': 'time', 'class': 'lesson-input', 'id': 'lesson-end', 'value': '08:00' });
-    const lessonName = createEl('select', { 'class': 'lesson-input lesson-select', 'id': 'lesson' });
-    const classRoom = createEl('select', { 'class': 'lesson-input lesson-select', 'id': 'classroom' });
-    const teacherName = createEl('select', { 'class': 'lesson-input lesson-select', 'id': 'teacher' });
+    const timeStartInput = createEl('input', { 'type': 'time', 'class': 'lesson-input', 'id': 'leson-start' + id, 'value': '08:00' });
+    const timeEndInput = createEl('input', { 'type': 'time', 'class': 'lesson-input', 'id': 'lesson-end' + id, 'value': '08:00' });
+    const lessonName = createEl('select', { 'class': 'lesson-input lesson-select', 'id': 'lesson' + id });
+    const classRoom = createEl('select', { 'class': 'lesson-input lesson-select', 'id': 'classroom' + id });
+    const teacherName = createEl('select', { 'class': 'lesson-input lesson-select', 'id': 'teacher' + id});
 
     inputs.appendChild(timeStartInput);
     inputs.appendChild(timeEndInput);

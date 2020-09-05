@@ -139,6 +139,7 @@ body {
     font-size: 35px;
     color: #0006;
     text-align: center;
+    transform: rotateZ(-180deg);
 }
 
 .week-inputs {
@@ -149,6 +150,7 @@ body {
 
 .inputs {
     margin-bottom: 5px;
+    flex-wrap: nowrap;
 }
 
 .lesson-input {
