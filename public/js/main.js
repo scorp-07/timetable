@@ -23,15 +23,15 @@ for (const item of specEl) {
 for (const item of addBtn) {
     item.addEventListener('click', () => {
         const pBlock = item.parentElement;
-        const lessonData = {
-            "startTime": document.getElementById(`lesson-start${idCount}`).value,
-            "endTime": document.getElementById(`lesson-end${idCount}`).value,
-            "lessonName": document.getElementById(`lesson${idCount}`).value,
-            "classRoom": document.getElementById(`classroom${idCount}`).value,
-            "teacher": document.getElementById(`teacher${idCount}`).value,
-        }
+        // const lessonData = {
+        //     "startTime": document.getElementById(`lesson-start${idCount}`).value,
+        //     "endTime": document.getElementById(`lesson-end${idCount}`).value,
+        //     "lessonName": document.getElementById(`lesson${idCount}`).value,
+        //     "classRoom": document.getElementById(`classroom${idCount}`).value,
+        //     "teacher": document.getElementById(`teacher${idCount}`).value,
+        // }
         
-        console.log(lessonData);
+        // console.log(lessonData);
         
         idCount++;
         item.before(createInputs(idCount));
